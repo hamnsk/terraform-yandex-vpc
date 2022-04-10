@@ -78,6 +78,14 @@ module "vpc" {
 
 locals {
   vpc_subnets = {
+    default = [
+      {
+        "v4_cidr_blocks": [
+          "10.127.0.0/24"
+        ],
+        "zone": var.yc_region
+      }
+    ]
     stage = [
       {
         "v4_cidr_blocks": [
